@@ -33,7 +33,7 @@ server.listen(port, (err) => {
 ```
 
 * requestHandler: Esta función será invocada cata vez que un request llegue al servidor. Si visitas `localhost:3000` desde tu browser, dos mensages apareceran: uno para `/` y otro para `favicon.icon`
-* `if (err)`: manejador de errors, si el purto ya esta cocupado o por cualquier otro motivo nuestro servidor no puede inicairse, y se nos notifica aquí.
+* `if (err)`: manejador de errors, si el puesrto ya esta cocupado o por cualquier otro motivo nuestro servidor no puede inicairse, y se nos notifica aquí.
 
 > **Correr el servidor** 
 `$ node index.js`
@@ -48,7 +48,7 @@ Pero nosotros usaremos el mas popular el cual es express.js
 
 ## Nuestro primer endpoint con express
 
-**Instalar express**
+**Instalar express y nodemon**
 
 ```javascript
 const express = require('express')
@@ -72,10 +72,12 @@ La mayor diferencia que debe notar aquí es que Express por defecto le ofrece un
 
 Uno de los conceptos más poderosos que implementa Express es el patrón de middleware.
 
+## Correr expres usando nodemon
+## Crear archivo .gitignore
 
-## Configurar eslint
-## Instalar nodemon
-## Instalar morgan
+## ~Configurar eslint~
+## ~Instalar nodemon~
+## ~Instalar morgan~
 
 # Frontend
 
