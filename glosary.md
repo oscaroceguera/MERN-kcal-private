@@ -144,11 +144,25 @@ Es un algoritmo muy eficiente para determinar las diferencias entre la represent
 
 2- El segundo paso es la reconciliación, donde se actualiza el DOM con los resultados de diff.
 
+## Webpack
+
+En escencia, Webpack es un paque de módulos estáticos para aplicaciones javascript modernas.
+
+Cuando webpack procesa la aplicación, internamente crea un gráfico de dependecias que asigna cada módulo que el proyecto necesita y genera uno o mas paquetes.
+
+En la programacion modular, los devs dividen los prgramas en chunks (trozos) discretos de funcionalidad llamado módulo.
+
+Node.js ha admitido la programación modular casi desde su inicio. Pero en la web ha tardado en llegar y webpack nos ayuda a usar los modulos.
+
+[webpack](https://webpack.js.org/concepts/)
+[modulos](https://webpack.js.org/concepts/modules)
+
+
 ---
 
 * PropTypes
 * react router dom
-* webpack
+
 * axios
 * lodash
 * es babel

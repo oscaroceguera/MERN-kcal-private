@@ -72,7 +72,7 @@ La mayor diferencia que debe notar aquí es que Express por defecto le ofrece un
 
 Uno de los conceptos más poderosos que implementa Express es el patrón de middleware.
 
-## Correr expres usando nodemon
+## Correr express usando nodemon
 ## Crear archivo .gitignore
 
 ## ~Configurar eslint~
@@ -81,10 +81,30 @@ Uno de los conceptos más poderosos que implementa Express es el patrón de midd
 
 # Frontend
 
-* Crear carpeta cliente
-* Correr react con webpack
+**Crear carpeta cliente:**
+  * Iniciar proyecto con npm para poder usar paquetes de node
+  * carpeta src
+  * archivo src/index.js
+  * archivo src/index.html
+  * archivo webpack.common.js
+  * archivo webpack.dev.js
+  * archivo webpack.prod.js
+  * construir index.html
+  * instalar dependencias:
+    * `npm install --save react react-dom react-loadable react-router-dom`
+    * react
+    * [react-dom](https://www.npmjs.com/package/react-dom) (Sive como punto de entrada al DOM y alos procesadores del servidor para React.)
+    * [react-loadable](https://github.com/jamiebuilds/react-loadable) (Es una HOC para cargar componentes de manera dinámica)
+  * Crear hola mundo con react:
+    * crear y construir **src/container/App/index.js** y **src/container/App/style.css**
+  * Insertar en el DOM nuestra aplicacion en **src/index.js** normal, sin react-loadable
+  * necesitamos configurar webpack para correr nuestra aplicacion
+    * 
 
-# Stack
-
-* inicializar git
-* crear archivo de .gitignore
+webpack
+clean-webpack-plugin
+html-webpack-plugin
+webpack-merge
+extract-text-webpack-plugin
+webpack-bundle-analyzer
+uglifyjs-webpack-plugin
