@@ -1,0 +1,30 @@
+.container {
+  background: #55efc4;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hello {
+  background: #3F51B5;
+  color: white;
+  text-shadow: 0px 0px 1px #00b894;
+  margin: 0;
+  font-size: 3em;
+  padding: .5em;
+  text-align: center;
+  width: 50%;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px grey;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.hello:hover {
+  opacity: 0.8;
+}
+
+.worldIcon:after {
+  content: '\1F30F';
+}

@@ -103,3 +103,8 @@ Utilizando la arquitectura **MERN** (Mongo, Express, React, Node), crear aplicac
   * *[ ] **[BACK]** - TDD
   * *[ ] **[FRONT]** - TDD
   * *[ ] **[FRONT]** - E2E
+
+
+**Nice to have**
+
+* Usar alias en webpack para carpetas

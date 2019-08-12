@@ -1,13 +1,14 @@
 import React from 'react'
-import styles from './styles.css'
-
-// const App = () => (
-//   <h1 className={styles.hello}>Hola Mundo!</h1>
-// )
+import { container, hello, helloDos, worldIcon } from './styles.module.css'
 
 const App = () => {
   return (
-    <h1 className={styles.hello}>Hola Mundo!</h1>
+    <div className={container}>
+      <h1 className={hello}>
+        ¡Hola Mundo! <br />
+        <span className={worldIcon} />
+      </h1>
+    </div>
   )
 }
 

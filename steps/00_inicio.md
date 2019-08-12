@@ -98,13 +98,18 @@ Uno de los conceptos más poderosos que implementa Express es el patrón de midd
   * Crear hola mundo con react:
     * crear y construir **src/container/App/index.js** y **src/container/App/style.css**
   * Insertar en el DOM nuestra aplicacion en **src/index.js** normal, sin react-loadable
-  * necesitamos configurar webpack para correr nuestra aplicacion
-    * 
+  * necesitamos configurar webpack para correr nuestra aplicación [config webpack](https://blog.nearsoftjobs.com/10-pasos-para-configurar-react-webpack-4-y-babel-7-5b4096924f23)
+    * `$ npm install @babel/core @babel/preset-react @babel/preset-env babel-loader --save-dev`
+    * **@babel/core**: Transformara ECMA6 a JavaScript más viejo (estandarizado para todos los navegadores).
+    * **@babel/preset-env**: Es un ajuste preestablecido inteligente que le permite usar el último JavaScript sin necesidad de microgestión de qué transformaciones de sintaxis. ¡Esto te hace la vida más fácil y los paquetes de JavaScript más pequeños!
+    * **babel-loader**: Éste es un modulo de webpack que nos ayudará a leer nuestros archivos de JavaScript y procesarlos con @babel/core y @babel/preset-react.
+    * **@babel/preset-react**: Al momento de que babel trate de convertir ECMA6 a JavaScript viejo, no va a entender JSX, y este preset nos ayudará con eso.
+    * instalar webpack en nuestras dependencias `$ npm install --save-dev webpack webpack-cli webpack-cli`.
+    * crearemos nuestro archivo de de config principal e instalamos `$  npm install --save-dev clean-webpack-plugin html-webpack-plugin mini-css-extract-plugin webpack-merge webpack-bundle-analyzer uglifyjs-webpack-plugin`
+    * creamos el archivo webpack.dev y lo ponemos en el script de start
 
-webpack
-clean-webpack-plugin
-html-webpack-plugin
-webpack-merge
-extract-text-webpack-plugin
-webpack-bundle-analyzer
-uglifyjs-webpack-plugin
+* crear archivo **.babelrc**: para declarar nuestros presets de babel y estos funcionen.
+
+* Ir ala config de webpack **common, dev y prod**
+
+* Configurar nuestro script para que corra en modo dev y mostrar lo que hace en produccion
