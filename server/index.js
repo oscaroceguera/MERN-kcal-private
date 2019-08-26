@@ -1,14 +1,27 @@
-const express = require('express')
-const app = express()
-const port = 3000
+require('./config/config')
 
-// Express ofrece por defecto un enrutador, no tieme que verificar
-// manualmente la URL, para decir que hacer, sino que define el 
-// entutamiento de la aplciaion con app.get, app.post, app.put,
-// Se traducen a los verbos HTTP correspondientes
-app.get('/', (request, response) => {
-  response.send('Hello from Express!')
-})
+const express = require('express')
+/*
+** instalamos morgan que es un http 
+** request logger middleware para node
+** $ npm install --save-dev morgan
+*/
+const morgan = require('morgan')
+const bodyParser = require('body-parser')
+const { mongoose } = require('./db/mongoose')
+
+const port = process.env.PORT
+
+const app = express()
+
+app.use(morgan('dev'))
+app.use(bodyParser.json())
+
+// movemos el acceso "/" a routes
+// mandamos a llamar el archivo routes
+const routes = require('./routes')
+
+routes(app)
 
 app.listen(port, (err) => {
   if (err) {

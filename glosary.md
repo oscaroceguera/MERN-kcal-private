@@ -96,13 +96,21 @@ Esto que es algo impensable en una base de datos relacional, es algo totalmente 
 * **Escalado Automatico**
   * nos ofrece un escalado horizontal. Para ello el sistema de sharding nos permite distribuir información por diferentes cluster de máquinas.
 
+## mongoose
+
+Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.
+
+Mongoose es una herramienta de modelado de objetos MongoDB diseñada para trabajar en un entorno asíncrono.
+
+## Body-parser
+Es un middleware que analiza el cuerpo de un request, permitiendo obtener dicha info bajo la propiedad **req.body**
 
 ---
 * node enviroment
 * es6-requireindex
 * es un middleware
 * async/await
-* mongoose
+
 * mocha
 * morgan
 * uuid

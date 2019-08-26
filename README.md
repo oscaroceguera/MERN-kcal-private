@@ -108,3 +108,4 @@ Utilizando la arquitectura **MERN** (Mongo, Express, React, Node), crear aplicac
 **Nice to have**
 
 * Usar alias en webpack para carpetas
+* Session de usuario
