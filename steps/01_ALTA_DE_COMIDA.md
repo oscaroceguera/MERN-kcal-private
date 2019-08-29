@@ -31,7 +31,14 @@
 
 ---
 
-
-* instalamos morgan u¡cuando s eocupe
-
 # Frontend
+
+* Tenemos que crear la seccion para agregar comida:
+  * Configurar el uso de rutas con react-router-dom en `src/index.js`
+  * Mover archivo **index.js** fuera de la **carpeta App** y renombrarlo a **App.js**, quedaría `src/container/App.js`
+  * crear carpeta **pages** con carpetas (Calories, Dashboard, Summary) con un ccomponente base
+  * Configurar nuestro router y rutas en **App.js**
+  * Activar en **webpack.dev.js** `historyApiFallback: true` para poder hacer refresh y acceder a rutas por medio del browser
+
+  * Usaremos react-loadable para usar coding spliting en `src/index.js`, es un HOC para cargar componentes dinamicamente (cuando webpack hace build de nuestra aplicación obtenemos una construccion completa de nuestra app, y con coding-spliting solo carga lo qu ese necesita y solo una vez), fijarse en el webpack-analizer.
+  * Usamos react-loadable para hacer coding-spliting de nuestras rutas en `src/container/App.js`
