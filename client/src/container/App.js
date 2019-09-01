@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import { container } from './styles.module.css'
 
 import Loadable from 'react-loadable'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 /**
  * Creamos una funcion para abstraer el HOC
@@ -13,7 +14,7 @@ import Loadable from 'react-loadable'
 const dynamicImport = importingComponent => (
   Loadable({
     loader: importingComponent,
-    loading: () => <div>Loading...</div>
+    loading: () => <div style={{ textAlign: 'center', marginTop: '5em' }}><CircularProgress /></div> 
   })
 )
 
@@ -33,7 +34,7 @@ const App = (props) => {
     <div className={container}>
       <Switch>
         <Route exact path='/' component={Dashboard} />
-        <Route path='/calories' component={Calories} />
+        <Route path='/add-calories' component={Calories} />
         <Route path='/summary' component={Summary} />
         <Route component={NoMatch} />
       </Switch>

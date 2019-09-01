@@ -10,10 +10,17 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const { mongoose } = require('./db/mongoose')
 
+/**
+ * Instalar CORS: Es un mecanismo que permite restringir el acceso de request
+ * de una pagina web desde otro dominio fuera del dominio
+ */
+const cors = require('cors')
+
 const port = process.env.PORT
 
 const app = express()
 
+app.use(cors())
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 
