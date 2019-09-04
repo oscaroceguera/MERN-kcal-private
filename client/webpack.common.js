@@ -121,6 +121,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: isDevelopment ? "[name].css" : "[name]-[contenthash].css" 
     })
-    
-  ]
+  ],
+  resolve: {
+    alias: {
+      component: path.resolve(__dirname, './src/component'),
+      helpers: path.resolve(__dirname, './src/helpers')
+    }
+  }
 }

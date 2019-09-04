@@ -22,6 +22,7 @@ module.exports = app => {
   router.get('/catalogs/mealTypes', mealtypes.getMealType)
 
   router.post('/meals', meal.addMeal)
+  router.get('/meals', meal.getMeals)
 
 
   // paso 2

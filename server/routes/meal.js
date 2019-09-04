@@ -35,3 +35,16 @@ exports.addMeal = async (req, res) => {
     res.status(400).send(error)
   }
 }
+
+exports.getMeals = async (req, res) => {
+  try {
+    const meals = await Meal.find() // primero
+      .populate('foods') // segundo
+      .populate('mealType') // tercero
+      .sort('-date') // ultimo
+
+      res.send(meals)
+  } catch (error) {
+    res.status(400).send(error)
+  }
+}

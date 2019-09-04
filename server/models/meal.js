@@ -7,7 +7,7 @@ const {v4} = require('uuid')
 ** que permitira almacenar en nuestra coleccion
 */
 const MealSchema = new mongoose.Schema({
-  uui: {
+  uuid: {
     type: String,
     default: v4
   },
