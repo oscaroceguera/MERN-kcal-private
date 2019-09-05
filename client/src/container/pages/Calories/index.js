@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import keycode from 'keycode'
 import { DropDown, Autocomplete } from '../../../component'
 import CircularProgress from '@material-ui/core/CircularProgress'
+import { UTCDate } from 'helpers'
 
 import styles from './styles.module.css'
 
@@ -44,6 +45,14 @@ class Calories extends React.Component {
    * que hay un componente para actualizar.
    */
   componentDidMount() {
+    // FOR UPDATE
+    const { uuid } = this.props.match.params
+
+    // FOR UPDATE
+    if (uuid) {
+      this.getDetail(uuid)
+    }
+
     this.load()
   }
 
@@ -88,6 +97,32 @@ class Calories extends React.Component {
 
     } catch (error) {
       // console.log("TCL: Calories -> load -> error", error)
+      this.setState({
+        error: error.message,
+        loading: false
+      })
+    }
+  }
+
+  // FOR UPDATE
+  async getDetail (uuid) {
+    this.setState({
+      loading: true,
+      error: null
+    })
+
+    try {
+      const data = (await axios.get(`${HOST}/api/meals/${uuid}`)).data
+      // console.log("TCL: Calories -> getDetail -> data", data)
+      this.setState({
+        loading: false,
+        meal: data.meal,
+        mealType: data.mealType.uuid,
+        date: UTCDate(data.date, 'yyyy-MM-dd'),
+        selectedItem: data.foods.map(i => i.label),
+        selectedFood: data.foods.map(i => i.uuid)
+      })
+    } catch (error) {
       this.setState({
         error: error.message,
         loading: false
@@ -150,7 +185,10 @@ class Calories extends React.Component {
   }
 
   onSave = async (e) => {
-    this.setState({ loading: true })
+    this.setState({
+      loading: true,
+      error: null
+    })
 
     const { meal, selectedFood, mealType, date } = this.state
     const data = { meal, foods: selectedFood, mealType, date }
@@ -166,6 +204,40 @@ class Calories extends React.Component {
       })
     }
   }
+
+  // UPDATE
+  onUpdate = async (e) => {
+    // console.log('On Update')
+    this.setState({
+      loading: true,
+      error: null
+    })
+
+    const { uuid } = this.props.match.params
+    const { meal, selectedFood, mealType, date } = this.state
+    const data = {
+      meal,
+      foods: selectedFood,
+      mealType,
+      date
+    }
+
+    try {
+      const response = await axios.patch(`${HOST}/api/meals/${uuid}`, data)
+      this.setState({
+        loading: false
+      })
+
+      this.props.history.push('/')
+    } catch (error) {
+      this.setState({
+        error: error.message,
+        loading: false
+      })
+    }
+  }
+
+  // TODO: Probar componentWillUnmount
 
   render () {
     const {
@@ -191,6 +263,7 @@ class Calories extends React.Component {
 
     const disabled = !!meal && !!mealType && selectedItem.length > 0
 
+    const isUpdate = this.props.match.params.uuid
 
     if (loading) {
       return (
@@ -260,9 +333,9 @@ class Calories extends React.Component {
                   name='mealType'
                   variant='contained'
                   color='secondary'
-                  onClick={this.onSave}
+                  onClick={isUpdate ? this.onUpdate : this.onSave}
                 >
-                  Guardar
+                  {isUpdate ? 'Actualizar' : 'Guardar'}
                 </Button>
               </div>
             </Paper>

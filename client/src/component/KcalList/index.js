@@ -28,14 +28,15 @@ const InlStyles = theme => ({
   }
 })
 
-const KcalList = ({ items, classes }) =>
+const KcalList = ({ items, classes, onClick }) =>
   items.map((item, key) =>
-    <Paper key={key} className={classes.root}>
+    <Paper key={key} className={classes.root} onClick={onClick(item.uuid)}>
       <KcalListItem {...item} />
     </Paper>
   )
 
 KcalList.propTypes = {
+  onClick: PropTypes.func.isRequired,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       meal: PropTypes.string,

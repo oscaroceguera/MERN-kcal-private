@@ -65,6 +65,11 @@ class Dashboard extends Component {
   //   this.props.history.push('/calories')
   // }
 
+  getDetail = uuid => e => {
+    e && e.preventDefault()
+    this.props.history.push(`/detail/${uuid}`)
+  }
+
   render () {
     const {items, loading, error} = this.state
 
@@ -77,7 +82,7 @@ class Dashboard extends Component {
     }
 
     const ErrorMsg = <p className={styles.error}>{error}</p>
-    const List = error ? ErrorMsg : <KcalList items={items} />
+    const List = error ? ErrorMsg : <KcalList items={items} onClick={this.getDetail} />
 
     return(
         <div className={styles.container}>
