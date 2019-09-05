@@ -237,7 +237,31 @@ class Calories extends React.Component {
     }
   }
 
-  // TODO: Probar componentWillUnmount
+  // DELETE
+  onDelete = async (e) => {
+    // console.log('onDelete')
+    this.setState({
+      loading: true,
+      error: null
+    })
+
+    const { uuid } = this.props.match.params
+
+    try {
+      await axios.delete(`${HOST}/api/meals/${uuid}`)
+
+      this.setState({
+        loading: false
+      })
+
+      this.props.history.push('/')
+    } catch (error) {
+      this.setState({
+        error: error.message,
+        loading: false
+      })
+    }
+  }
 
   render () {
     const {
@@ -328,6 +352,16 @@ class Calories extends React.Component {
                 handleDelete={this.handleDelete} // CREAR - handleDelete
               />
               <div className={styles.btnContainer}>
+                {isUpdate && (
+                  <Button
+                    className={styles.btnDelete}
+                    name='mealType'
+                    variant='contained'
+                    onClick={this.onDelete}
+                  >
+                    Eliminar
+                  </Button>
+                )}
                 <Button
                   disabled={!disabled}
                   name='mealType'

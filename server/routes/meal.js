@@ -102,3 +102,17 @@ exports.updateMeal = async (req, res) => {
     res.status(400).send(error)
   }
 }
+
+exports.deleteMeal = async (req, res) => {
+  const { uuid } = req.params
+
+  try {
+    const meal = await Meal.findOneAndRemove({ uuid })
+
+    if (!meal) return res.status(404).send()
+
+    res.send(meal)
+  } catch (error) {
+    res.status(404).send()
+  }
+}
