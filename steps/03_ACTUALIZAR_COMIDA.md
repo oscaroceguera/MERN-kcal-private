@@ -15,5 +15,3 @@
   * Obtener los datos para actualizar nuestro componente de **Calories**
   * Ir al Back para crear el **EP** de actualizar meal (B)
 * (C) Actualizar comida mediante la funcion **onUpdate**
-
-* PROBRAR: componentWillUnmount si es necesario usarse.
