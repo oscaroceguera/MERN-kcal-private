@@ -98,16 +98,18 @@ Utilizando la arquitectura **MERN** (Mongo, Express, React, Node), crear aplicac
   * *[ ] **[BACK]** - Crear ruta para obtener la suma de calorias **Por día** (GET)
   * *[ ] **[FRONT]** - Mostrar suma de calorias por día
 
-* *[ ] **06_DEPLOY_PRODUCCION:**
-  * *[ ] **[BACK]** - CORS
+## Nice to have
+
+* *[ ] **06_SESION_USUARIOS**
 
 * *[ ] **07_PRUEBAS_BONUS**
   * *[ ] **[BACK]** - TDD
   * *[ ] **[FRONT]** - TDD
   * *[ ] **[FRONT]** - E2E
 
+* *[ ] **08_DEPLOY_PRODUCCION:**
+  * *[ ] **[BACK]** - Heroku
+  * *[ ] **[BACK]** - AWS EC2
+  * *[ ] **[FRONT]** - Netlifly
+  * *[ ] **[FRONT]** - AWS S3
 
-**Nice to have**
-
-* Usar alias en webpack para carpetas
-* Session de usuario

@@ -23,7 +23,7 @@ const FoodTypeSchema = new mongoose.Schema({
     type: String
   },
   kcal: {
-    type: String
+    type: Number
   },
   type: {
     type: String

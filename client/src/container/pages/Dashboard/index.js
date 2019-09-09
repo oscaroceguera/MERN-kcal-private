@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 // install npm install --save-dev @material-ui/icons
 import AddIcon from '@material-ui/icons/Add'
+import Assessment from '@material-ui/icons/Assessment'
 import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 import Fab from '@material-ui/core/Fab';
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { KcalList } from 'component'
@@ -65,6 +67,11 @@ class Dashboard extends Component {
   //   this.props.history.push('/calories')
   // }
 
+  goToSummary = e => {
+    e && e.preventDefault()
+    this.props.history.push('/summary')
+  }
+
   getDetail = uuid => e => {
     e && e.preventDefault()
     this.props.history.push(`/detail/${uuid}`)
@@ -90,6 +97,14 @@ class Dashboard extends Component {
           <div className={styles.section}>
             {List}
             <div className={styles.containerBtns}>
+              <IconButton
+                color='primary'
+                aria-label='charts'
+                onClick={this.goToSummary}
+              >
+                <Assessment style={{ fontSize: '46px', color: '#ffc107' }} />
+              </IconButton>
+              <br />
               <Fab
                 size='medium'
                 color='primary'

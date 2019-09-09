@@ -61,6 +61,7 @@ const InlStyles = theme => ({
 // </>
 
 const KcalListItem = ({ meal, foods, mealType, date, uuid, classes }) => {
+  console.log("TCL: KcalListItem -> date", date)
   return (
     <>
       {/* OLD */}

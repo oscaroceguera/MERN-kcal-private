@@ -8,6 +8,7 @@ const router = express.Router()
 const foodTypes = require('./foodTypes')
 const mealtypes = require('./mealTypes')
 const meal = require('./meal')
+const summary = require('./summary')
 
 module.exports = app => {
   // paso 1
@@ -26,6 +27,10 @@ module.exports = app => {
   router.get('/meals/:uuid', meal.getMealById)
   router.patch('/meals/:uuid', meal.updateMeal)
   router.delete('/meals/:uuid', meal.deleteMeal)
+
+  router.get('/summary/byDay', summary.getByDay)
+  router.get('/summary/byMonth', summary.getByMonth)
+  router.get('/summary/byYear', summary.getByYear)
 
 
   // paso 2
