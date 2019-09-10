@@ -100,14 +100,18 @@ Utilizando la arquitectura **MERN** (Mongo, Express, React, Node), crear aplicac
 
 ## Nice to have
 
-* *[ ] **06_SESION_USUARIOS**
-
-* *[ ] **07_PRUEBAS_BONUS**
+* *[ ] **5.5_TDD_BACK_BONUS**
   * *[ ] **[BACK]** - TDD
+
+* *[ ] **5.6_TDD_FRONT_BONUS**
   * *[ ] **[FRONT]** - TDD
+
+* *[ ] **5.7_E2E_FRONT_BONUS**
   * *[ ] **[FRONT]** - E2E
 
-* *[ ] **08_DEPLOY_PRODUCCION:**
+* *[ ] **06_SESION_USUARIOS**
+
+* *[ ] **07_DEPLOY_PRODUCCION:**
   * *[ ] **[BACK]** - Heroku
   * *[ ] **[BACK]** - AWS EC2
   * *[ ] **[FRONT]** - Netlifly
