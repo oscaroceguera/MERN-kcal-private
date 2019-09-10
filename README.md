@@ -100,13 +100,13 @@ Utilizando la arquitectura **MERN** (Mongo, Express, React, Node), crear aplicac
 
 ## Nice to have
 
-* *[ ] **5.5_TDD_BACK_BONUS**
+* *[ ] **5.1_TDD_BACK_BONUS**
   * *[ ] **[BACK]** - TDD
 
-* *[ ] **5.6_TDD_FRONT_BONUS**
+* *[ ] **5.2_TDD_FRONT_BONUS**
   * *[ ] **[FRONT]** - TDD
 
-* *[ ] **5.7_E2E_FRONT_BONUS**
+* *[ ] **5.3_E2E_FRONT_BONUS**
   * *[ ] **[FRONT]** - E2E
 
 * *[ ] **06_SESION_USUARIOS**
