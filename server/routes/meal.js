@@ -3,6 +3,7 @@ const { FoodType } = require('../models/foodType')
 const { MealType } = require('../models/mealType')
 
 exports.addMeal = async (req, res) => {
+  // console.log("TCL: exports.addMeal -> req", req.body)
   try {
     let foods = []
 
@@ -31,8 +32,8 @@ exports.addMeal = async (req, res) => {
     const doc = await meal.save()
     res.send(doc)
   } catch (error) {
-    console.log("TCL: exports.addMeal -> error", error)
-    res.status(400).send(error)
+    // console.log("TCL: exports.addMeal -> error", error)
+    res.status(500).send(error)
   }
 }
 
@@ -45,7 +46,7 @@ exports.getMeals = async (req, res) => {
 
       res.send(meals)
   } catch (error) {
-    res.status(400).send(error)
+    res.status(500).send(error)
   }
 }
 
@@ -61,7 +62,7 @@ exports.getMealById = async (req, res) => {
 
     res.send(meal)
   } catch (error) {
-    res.status(400).send(error)
+    res.status(500).send(error)
   }
 }
 
@@ -99,7 +100,7 @@ exports.updateMeal = async (req, res) => {
 
     res.send(meal)
   } catch (error) {
-    res.status(400).send(error)
+    res.status(500).send(error)
   }
 }
 
@@ -113,6 +114,6 @@ exports.deleteMeal = async (req, res) => {
 
     res.send(meal)
   } catch (error) {
-    res.status(404).send()
+    res.status(500).send()
   }
 }

@@ -170,7 +170,6 @@ Node.js ha admitido la programación modular casi desde su inicio. Pero en la we
 
 * PropTypes
 * react router dom
-
 * axios
 * lodash
 * es babel
@@ -181,3 +180,5 @@ Node.js ha admitido la programación modular casi desde su inicio. Pero en la we
 * css-modules
 * Enzyme
 * jest
+
+http://pm2.keymetrics.io/docs/usage/quick-start/ (para variables de entorno en aws)

@@ -17,16 +17,16 @@ exports.addFoodType = async (req, res) => {
     
   } catch (error) {
     //  400: Bad request
-    res.status(400).send(error)
+    res.status(500).send(error)
   }
 }
 
 exports.getFoodTypes = async (req, res) => {
   try {
     const data = await FoodType.find()
-    res.send(data)
 
+    res.send(data)
   } catch (error) {
-    res.status(400).send(error)
+    res.status(500).send(error)
   }
 }
