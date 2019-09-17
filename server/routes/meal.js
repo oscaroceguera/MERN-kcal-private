@@ -3,7 +3,6 @@ const { FoodType } = require('../models/foodType')
 const { MealType } = require('../models/mealType')
 
 exports.addMeal = async (req, res) => {
-  // console.log("TCL: exports.addMeal -> req", req.body)
   try {
     let foods = []
 
@@ -71,15 +70,20 @@ exports.updateMeal = async (req, res) => {
   let foods = []
 
   try {
-    await Promise.all(body.foods.map(async (item) => {
-      const result = await FoodType.findOne({ uuid: item })
-      foods.push(result._id)
-    }))
 
-    body.foods = foods
+    if (body.foods) {
+      await Promise.all(body.foods.map(async (item) => {
+        const result = await FoodType.findOne({ uuid: item })
+        foods.push(result._id)
+      }))
+  
+      body.foods = foods
+    }
 
-    const mealType = await MealType.findOne({ uuid: body.mealType })
-    body.mealType = mealType._id
+    if (body.mealType) {
+      const mealType = await MealType.findOne({ uuid: body.mealType })
+      body.mealType = mealType._id
+    }
 
     // https://docs.mongodb.com/manual/reference/method/db.collection.findOneAndUpdate/
     // https://medium.com/@yugagrawal95/mongoose-mongodb-functions-for-crud-application-1f54d74f1b34
